@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="GET" action="/dash">
+    <div class="field">
+        <div class="control">
+            <input class="input is-large" type="text" name="email" placeholder="Nombre d'actifs par portefeuille" autofocus="">
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <input class="input is-large" type="text" name="email" placeholder="Taux sans risque" autofocus="">
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <input class="input is-large" type="text" name="email" placeholder="Comportement envers le risque" autofocus="">
+        </div>
+    </div>
+    
+    <button class="button is-block is-info is-large is-fullwidth" style="background-color: #352d2f !important;">Génerer un portefeuille</button>
+</form>
+
+

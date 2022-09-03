@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<img id="img1"  src="https://serving.photos.photobox.com/6554942295ec626f2300c7f50020645a507b30eca72b871fb3be4870441c7f4179960469.jpg">
+
+<style>
+
+#img1 {
+
+  width: 100%;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+
+</style>
+
+{% endblock %}
+
+
+--------------- Oracle Capital App
+               ├── __init__.py # setup your app
+               ├── main.py   # the non-auth routes for your app
+               ├── auth.py   # the auth routes for your app
+               ├── models.py # your user model
+               ├── db.sqlite # your database
+               └── templates
+                    ├── base.html     # contains common layout and links
+                    ├── index.html    # show the home page
+                    ├── login.html    # show the login form
+                    ├── profile.html  # show the profile page
+                    └── signup.html   # show the signup form

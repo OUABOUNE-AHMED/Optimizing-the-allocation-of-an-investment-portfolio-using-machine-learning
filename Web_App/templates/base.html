@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oracle Allocation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+
+<body>
+<section class="hero is-fullheight" style="background-color:grey;">
+
+    <div class="hero-head">
+        <nav class="navbar">
+
+
+
+                <div class="navigation-bar">
+                <div id="navigation-container">
+                  <img src="/static/logo.png">
+                  <ul>
+
+                    {% if current_user.is_authenticated %}
+                    <li style="color:white; margin-right: 400px; ">Bienvenue, {{name}}!</li>
+                    {% endif %}
+
+                    <li><a href="{{ url_for('main.index') }}" >Accueil</a></li>
+
+                    {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('main.dashboard') }}">Tableau de bord</a></li>
+                    {% endif %}
+
+                    {% if not current_user.is_authenticated %}
+                        <li><a href="{{ url_for('auth.login') }}">Connectez-vous 🔓 </a></li>
+                        <li><a href="{{ url_for('auth.signup') }}">S'inscrire</a></li>
+                    {% endif %}
+
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('auth.logout') }}">Déconnecter 🡺 </a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <style>
+                          body {
+                            background-color:#352d2f;
+                      margin: 0;
+                      padding: 0;
+                    }
+
+                    .logo {
+                      float: left;
+                    }
+                    /* ~~ Top Navigation Bar ~~ */
+
+                    #navigation-container {
+                      width: 1200px;
+                      margin: 0 auto;
+                      height: 80px;
+                    }
+
+                    .navigation-bar {
+                      background-color: grey;
+                      height: 80px;
+                      width: 100%;
+                      text-align:right;
+                    }
+                    .navigation-bar img{
+                    float:left;
+                    }
+                    .navigation-bar ul {
+                      padding: 0px;
+                      margin: 0px;
+                      text-align: center;
+                      display:inline-block;
+                      vertical-align:top;
+                    }
+
+                    .navigation-bar li {
+                      list-style-type: none;
+                      padding: 0px;
+                      height: 34px;
+                      margin-top: 6px;
+                      margin-bottom: 4px;
+                      display: inline;
+                    }
+
+                    .navigation-bar li a {
+                      color: White;
+                      font-size: 16px;
+                      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                      text-decoration: none;
+                      line-height: 70px;
+                      padding: 5px 15px;
+                      opacity: 0.7;
+                    }
+
+                    #menu {
+                      float: right;
+                    }
+                </style>
+
+
+
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
