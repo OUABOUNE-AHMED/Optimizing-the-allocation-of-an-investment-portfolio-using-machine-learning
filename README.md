@@ -2,6 +2,9 @@
 # Optimizing-the-allocation-of-an-investment-portfolio-using-machine-learning
 Optimizing the allocation of a multi-index portfolio using machine learning 
 
+# Project idea :
+![Home page](Web_App/project.png)
+
 # Web App Images :
 ![Home page](Web_App/home.png)
 ![Login page](Web_App/login.png)
